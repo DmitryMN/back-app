@@ -32,7 +32,7 @@ export class User extends Model<User, UserCreationAttrs > {
     @Column({type: DataType.STRING, unique: true, allowNull: true})
     banReason: string
 
-    @BelongsToMany(() => Role, () => UserRoles)
+    @BelongsToMany(() => Role, () => UserRoles, 'userId')
     roles: Role[];
 
 }
