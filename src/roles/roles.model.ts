@@ -24,6 +24,6 @@ export class Role extends Model<Role, RoleCreationAttrs> {
     @ApiProperty({example: 'Administrator', description: 'information'})
     description: string
 
-    @BelongsToMany(() => User, () => UserRoles)
+    @BelongsToMany(() => User, () => UserRoles, 'roleId')
     users: User[];
 }
